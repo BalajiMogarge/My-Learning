@@ -20,8 +20,14 @@ int RevercedNum(int num){
     }
     return (rnum/10);
 }
+int CheckPalindrom(int num){
+    if(num == RevercedNum(num))return true;
+    else return false;
+}
 int main(){
     cout << "Number of Digits are: " << DigitCount(12345) << endl;
     cout << "Reverce of Number is: " << RevercedNum(12345) << endl;
+    cout << "Is 121 a Palindrome: ";
+    CheckPalindrom(121)?cout<<"Yes\n":cout<<"No\n";
     return 0;
 }
