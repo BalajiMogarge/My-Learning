@@ -47,7 +47,22 @@ void AllDivisors(int n){
     }
     Divisors.emplace_back(n);
     for(auto it : Divisors){
-        cout<<it<<",";
+        cout<<it<<" ";
+    }
+}
+void AllDivisors2(int n){
+    vector<int> Divisors;
+    for(int i=1;i*i<=n;i++){
+        if(n % i == 0){
+            Divisors.emplace_back(i);
+            if(i != n/i){
+                Divisors.emplace_back(n/i);
+            }
+        }
+    }
+    sort(Divisors.begin(),Divisors.end());
+    for(auto it : Divisors){
+        cout<<it<<" ";
     }
 }
 int main(){
@@ -58,6 +73,6 @@ int main(){
     cout << "Is 153 a Armstrong: ";
     CheckArmstrong(153)?cout<<"Yes\n":cout<<"No\n";
     cout<< "All Divisors of 36 are:";
-    AllDivisors(36);
+    AllDivisors2(36);
     return 0;
 }
