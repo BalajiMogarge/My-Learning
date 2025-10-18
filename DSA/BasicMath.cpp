@@ -65,6 +65,18 @@ void AllDivisors2(int n){
         cout<<it<<" ";
     }
 }
+bool isPrime(int n){
+    int count = 0;
+    for(int i = 1;i <= n;i++){
+        if(n % i == 0){
+            count++;
+        }
+    }
+    if(count == 2){
+        return true;
+    }
+    else return false;
+}
 int main(){
     cout << "Number of Digits are: " << DigitCount(12345) << endl;
     cout << "Reverce of Number is: " << RevercedNum(12345) << endl;
@@ -72,7 +84,9 @@ int main(){
     CheckPalindrom(121)?cout<<"Yes\n":cout<<"No\n";
     cout << "Is 153 a Armstrong: ";
     CheckArmstrong(153)?cout<<"Yes\n":cout<<"No\n";
-    cout<< "All Divisors of 36 are:";
+    cout<< "All Divisors of 36 are: ";
     AllDivisors2(36);
+    cout<<endl<< "Is 11 Prime Number: ";
+    isPrime(11)?cout<<"Yes\n":cout<<"No\n";
     return 0;
 }
