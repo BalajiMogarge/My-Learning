@@ -38,6 +38,18 @@ bool CheckArmstrong(int n){
         return false;
     }
 }
+void AllDivisors(int n){
+    vector<int> Divisors;
+    for(int i=1;i<=(n/2);i++){
+        if(n % i == 0){
+            Divisors.emplace_back(i);
+        }
+    }
+    Divisors.emplace_back(n);
+    for(auto it : Divisors){
+        cout<<it<<",";
+    }
+}
 int main(){
     cout << "Number of Digits are: " << DigitCount(12345) << endl;
     cout << "Reverce of Number is: " << RevercedNum(12345) << endl;
@@ -45,5 +57,7 @@ int main(){
     CheckPalindrom(121)?cout<<"Yes\n":cout<<"No\n";
     cout << "Is 153 a Armstrong: ";
     CheckArmstrong(153)?cout<<"Yes\n":cout<<"No\n";
+    cout<< "All Divisors of 36 are:";
+    AllDivisors(36);
     return 0;
 }
