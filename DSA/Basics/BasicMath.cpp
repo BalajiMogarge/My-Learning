@@ -92,6 +92,23 @@ bool isPrime2(int n){
     }
     else return false;
 }
+void GCD(int a,int b){
+    vector<int> Common_Factors;
+    for(int i=min(a,b);i>=1;i--){
+        if(a % i == 0 && b % i == 0){
+            cout<<i;
+            break;
+        }
+    }
+}
+void EuclideanAlgorithm(int a,int b){
+    while (b != 0){
+        int temp = b;
+        b = b % a;
+        a = temp;
+    }
+    cout<<"GCD of 34 and 28 is: "<<a;
+}
 int main(){
     cout << "Number of Digits are: " << DigitCount(12345) << endl;
     cout << "Reverce of Number is: " << RevercedNum(12345) << endl;
@@ -103,5 +120,6 @@ int main(){
     AllDivisors2(36);
     cout<<endl<< "Is 11 Prime Number: ";
     isPrime2(11)?cout<<"Yes\n":cout<<"No\n";
+    EuclideanAlgorithm(34,28);
     return 0;
 }
